@@ -9,7 +9,7 @@ color: #5B2C6F
 
 # LAB Agent
 
-**Presentée par :** Salma Akagou  
+**Presentée par :** Salma Akajou  
 **Encadré par :** Mr. ESSARRAJ Fouad  
 **Projet :** Lab Agent  
 **Année :** 2025 / 2026
