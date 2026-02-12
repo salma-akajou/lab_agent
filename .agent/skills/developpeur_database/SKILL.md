@@ -17,27 +17,55 @@ description: Gère la structure de la base de données, les modèles Laravel et 
 
 ---
 
-## 🧩 Responsabilités Clés
+## ⚡ Actions
 
-### 1️⃣ Gestion du Schéma de la Base
-- Créer et mettre à jour les tables via les migrations.
-- Définir les clés primaires, étrangères et index.
-- Assurer la possibilité de rollback.
+### Action 1 : Créer/Modifier Schéma (Migration)
+**Contexte** : Créer/modifier la structure de la base de données  
+**Capacité détaillée** : [ressources/capacité_migration.md](ressources/capacité_migration.md)
 
-### 2️⃣ Modélisation des Données
-- Créer des modèles Eloquent clairs et lisibles.
-- Définir les relations (`belongsTo`, `hasMany`, etc.).
-- Utiliser `$casts` pour un typage correct.
+**Étapes du processus :**
+1. Générer la migration avec `php artisan make:migration`
+2. Implémenter `up()` pour les changements
+3. Implémenter `down()` pour la réversion
+4. Exécuter avec `php artisan migrate`
+5. Tester le rollback avec `php artisan migrate:rollback`
 
-### 3️⃣ Génération de Données de Test
-- Créer des factories avec des données réalistes.
-- Alimenter la base via les seeders.
-- Faciliter le développement et les tests.
+**Validation** : Migration reversible et testée sans erreurs
+
+---
+
+### Action 2 : Définir Modèle Eloquent
+**Contexte** : Mapper une table en modèle Eloquent exploitable  
+**Capacité détaillée** : [ressources/capacité_modele_eloquent.md](ressources/capacité_modele_eloquent.md)
+
+**Étapes du processus :**
+1. Créer le modèle avec `php artisan make:model User`
+2. Configurer `$fillable` pour protéger la masse
+3. Ajouter `$casts` pour les types spécialisés
+4. Déclarer les relations (belongsTo, hasMany, etc.)
+5. Tester les opérations CRUD (`create()`, `update()`, `delete()`)
+
+**Validation** : Modèle fonctionnel avec relations testées
+
+---
+
+### Action 3 : Peupler la Base avec Seeders
+**Contexte** : Alimenter la base avec données de test ou réelles  
+**Capacité détaillée** : [ressources/capacité_seeders.md](ressources/capacité_seeders.md)
+
+**Étapes du processus :**
+1. Créer Seeder pour données réelles avec `php artisan make:seeder UserSeeder`
+2. Importer depuis CSV ou base de données existante
+3. Implémenter la lecture de données
+4. Insérer en base de données
+5. Exécuter avec `php artisan db:seed`
+
+**Validation** : Données présentes et accessibles en base
 
 ---
 
 ## 🔄 Exemple de Flux de Travail
-1. Création d’une migration pour une nouvelle table.
+1. Création d'une migration pour une nouvelle table.
 2. Création du modèle associé.
 3. Génération de données fictives.
 4. Test avec `php artisan migrate --seed`.

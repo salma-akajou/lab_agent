@@ -17,26 +17,54 @@ description: Centralise la logique métier et les règles de gestion de l’appl
 
 ---
 
-## 🧠 Missions du Service
+## ⚡ Actions
 
-### 1️⃣ Création de Services Métier
-- Un service = un domaine métier.
-- Méthodes claires et bien nommées.
-- Typage strict des paramètres et retours.
+### Action 1 : Construire la Logique Métier
+**Contexte** : Encapsuler la logique domaine dans des services réutilisables  
+**Capacité détaillée** : [ressources/capacité_service_metier.md](ressources/capacité_service_metier.md)
 
-### 2️⃣ Implémentation des Règles Métier
-- Appliquer les règles fonctionnelles.
-- Gérer les exceptions métier.
-- Retourner des objets cohérents (Model ou DTO).
+**Séquence d'actions :**
+1. Identifier le domaine métier (User, Order, Invoice, etc.)
+2. Créer le fichier `app/Services/[Domain]Service.php`
+3. Implémenter les méthodes CRUD (create, update, delete, getAll)
+4. Injecter les dépendances (modèles, autres services)
+5. Typer les retours (Model, Collection, bool)
+6. Tester chaque méthode indépendamment
 
-### 3️⃣ Sécurité & Autorisations
-- Définir des Policies par modèle.
-- Vérifier les droits avant toute action sensible.
-- Centraliser les règles d’accès.
+**Validation** : Service fonctionnel avec logique isolée
 
-### 4️⃣ Gestion Avancée
-- Intégration des médias (Spatie MediaLibrary).
-- Gestion des rôles et permissions (Spatie Permission).
+---
+
+### Action 2 : Formaliser les Règles Domaine
+**Contexte** : Centraliser les validations métier complexes et les calculs  
+**Capacité détaillée** : [ressources/capacité_rules_metier.md](ressources/capacité_rules_metier.md)
+
+**Séquence d'actions :**
+1. Identifier les règles métier du domaine
+2. Créer des méthodes privées pour chaque règle
+3. Nommer explicitement (`validateOrderEligibility()`, `calculatePrice()`, etc.)
+4. Lancer exceptions claires quand règles violées
+5. Utiliser transactions pour opérations liées
+6. Tester tous les cas limites (nominal + erreurs)
+
+**Validation** : Règles testées et exceptions documentées
+
+---
+
+### Action 3 : Sécuriser l'Accès aux Ressources
+**Contexte** : Contrôler qui peut faire quoi sur quelle ressource  
+**Capacité détaillée** : [ressources/capacité_securite.md](ressources/capacité_securite.md)
+
+**Séquence d'actions :**
+1. Créer la Policy avec `php artisan make:policy [Resource]Policy`
+2. Implémenter les méthodes standards (create, update, delete, etc.)
+3. Ajouter `before()` pour bypass admin automatique
+4. Vérifier propriété et rôles dans chaque méthode
+5. Enregistrer dans `AuthServiceProvider`
+6. Utiliser `$this->authorize()` en contrôleur
+7. Tester tous les rôles et cas (admin, owner, others)
+
+**Validation** : Autorisations testées, non-autorisés retournent 403
 
 ---
 
