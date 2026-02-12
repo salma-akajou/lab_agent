@@ -1,108 +1,69 @@
----
-marp: true
-theme: default
-_class: lead
-paginate: true
-backgroundColor: #ffffff
-color: #5B2C6F
----
+# 🧠 LAB Agent
 
-# LAB Agent
-
-**Presentée par :** Salma Akajou  
-**Encadré par :** Mr. ESSARRAJ Fouad  
-**Projet :** Lab Agent  
-**Année :** 2025 / 2026
+LAB Agent est une configuration interne intégrée dans le projet Laravel afin d’encadrer et structurer le processus de développement.
 
 ---
 
-## Plan de la Présentation
+## 🔎 Pourquoi utiliser `.agent` ?
 
-1. Le concept de l’Agent  
-2. Les Rules  
-3. Les Workflows  
-4. Les Skills  
-5. Exemple d’utilisation  
-6. Structure du dépôt
+L’objectif est d’instaurer une logique claire dans le projet :
 
----
+- Encadrer la manière d’écrire le code  
+- Uniformiser les pratiques de développement  
+- Réduire les incohérences  
+- Assurer une meilleure maintenabilité  
 
-## 1. Définition de l’Agent
-
-> Un Agent est une entité intelligente capable d’exécuter des tâches
-de manière structurée et cohérente.
-
-- Il analyse une demande utilisateur.
-- Il comprend le contexte du projet.
-- Il applique des règles et des méthodes définies à l’avance.
-- Il produit un résultat organisé et réutilisable.
+Cette organisation repose sur trois éléments complémentaires.
 
 ---
 
-## 2. Rôle des Rules
+## 📜 Rules
 
-Les **Rules** représentent les règles générales du projet.
+Les **Rules** définissent les principes fondamentaux à respecter dans tout le projet.
 
-- Elles définissent les bonnes pratiques à respecter.
-- Elles sont toujours prises en compte par l’agent.
-- Elles garantissent une cohérence globale du code.
-- Elles limitent les erreurs liées à une mauvaise organisation.
+Elles servent de référence constante lors du développement et imposent :
 
-📌 Exemple :  
-Architecture Laravel, conventions de nommage, ...
+- Le respect de l’architecture définie  
+- L’application des conventions de nommage  
+- La validation obligatoire des données  
+- Une séparation claire des responsabilités  
 
----
-
-## 3. Rôle des Workflows
-
-Les **Workflows** décrivent un enchaînement logique d’actions.
-
-- Ils sont déclenchés par une commande précise.
-- Ils guident l’agent étape par étape.
-- Ils assurent un déroulement clair du travail.
-- Ils évitent les oublis lors du développement.
-
-📌 Exemple :  
-Création d’un module, mise à jour d’une fonctionnalité, refactorisation.
+Les Rules garantissent une base solide et cohérente.
 
 ---
 
-## 4. Rôle des Skills
+## 🎯 Skills
 
-Les **Skills** représentent les domaines d’expertise de l’agent.
+Les **Skills** correspondent aux compétences techniques mobilisées selon le contexte.
 
-- Chaque skill est spécialisé dans un sujet précis.
-- Il est utilisé uniquement lorsque le contexte le nécessite.
-- Il permet d’améliorer la qualité des réponses de l’agent.
-- Il rend l’agent plus intelligent et plus ciblé.
+Chaque Skill intervient lorsqu’une technologie ou une responsabilité spécifique est concernée.
 
-📌 Exemple :  
- validation des formulaires, traduction Laravel, spatie.
+Exemples de domaines couverts :
 
----
+- Construction d’interfaces avec Blade  
+- Logique interactive avec Alpine.js  
+- Gestion des permissions  
+- Implémentation des traductions  
+- Validation des requêtes  
 
-## 5. Exemple d’Utilisation
-
-### Demande :
-`/build-ui-feature Film`
-
-### Comportement de l’Agent :
-
-- Il applique les **Rules** pour respecter l’architecture.
-- Il utilise la **Skill Blade** pour construire l’interface.
-- Il suit le **Workflow UI Feature** pour organiser les étapes.
-- Il produit un code clair, structuré et fonctionnel.
+Les Skills permettent une implémentation adaptée et précise.
 
 ---
 
-## 6. Structure du Dépôt
-```bash
-.agent/
-├── rules/
-│ ├── architecture-laravel.md
-│ └── naming-convention.md
-├── skills/
-│ └── laravel-translation.md
-└── workflows/
-  └── refactor-feature-flow.md
-```
+## 🔄 Workflows
+
+Les **Workflows** décrivent des scénarios organisés pour accomplir une tâche donnée.
+
+Ils structurent l’enchaînement des étapes et permettent :
+
+- Une exécution méthodique  
+- Une meilleure organisation  
+- Une réduction des oublis  
+
+Un Workflow peut encadrer :
+
+- L’implémentation d’une nouvelle fonctionnalité  
+- La modification d’un module existant  
+- L’amélioration ou la refactorisation d’un composant  
+
+---
