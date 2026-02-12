@@ -1,5 +1,4 @@
 ---
-trigger: always_on
 type: rule
 id: config-environnement
 ---
