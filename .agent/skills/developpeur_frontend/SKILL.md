@@ -29,9 +29,8 @@ description: Développe l’interface utilisateur avec Blade, Tailwind et Alpine
 2. Créer le fichier dans `resources/views/components/nom-kebab-case.blade.php`
 3. Déclarer les props avec `@props()`
 4. Styliser avec Tailwind CSS (responsive)
-5. Ajouter les attributs ARIA pour l'accessibilité
-6. Tester la réutilisabilité dans 2+ contextes
-
+5. Tester la réutilisabilité dans 2+ contextes
+ 
 **Validation** : Composant accessible, responsive et réutilisable
 
 ---
